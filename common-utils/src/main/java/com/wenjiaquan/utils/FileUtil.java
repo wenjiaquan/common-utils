@@ -52,8 +52,23 @@ public class FileUtil {
 		}
 		return sb.toString();
 	}
+	/**
+	 * 递归删除文件
+	 * @param args
+	 */
+	public static void deleteFile(File file) {
+		if(file.isDirectory()) {
+			File[] listFiles = file.listFiles();
+			for (File file2 : listFiles) {
+				deleteFile(file2);
+			}
+			file.delete();
+		}else {
+			file.delete();
+		}
+	}
 	public static void main(String[] args) {
-		System.out.println(readTestFileLine(new File("D:\\游戏\\aaa.txt")));
+		deleteFile(new File("D:\\游戏\\aaa.txt"));
 		
 	}
 }
