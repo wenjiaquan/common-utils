@@ -30,5 +30,17 @@ public class StringUtil {
 		String regex="1[3578]\\d{9}";
 		return str.matches(regex);
 	}
-	
+	/**
+	 * 字符串替换
+	 * @param str1
+	 * @return
+	 */
+	public static String replacestr(String str1) {
+		String str="asdaxexca";
+		str=str.replace("xca", str1);
+		return str;
+	}
+	public static void main(String[] args) {
+		System.out.println(replacestr("wen"));
+	}
 }
