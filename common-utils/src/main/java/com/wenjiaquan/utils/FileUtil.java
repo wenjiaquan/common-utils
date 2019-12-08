@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /**   
 * @Title: FileUtil.java 
@@ -42,7 +44,7 @@ public class FileUtil {
 			br=new BufferedReader(new FileReader(file));
 			while(br.read()!=-1) {
 				String readLine = br.readLine();
-				sb.append(readLine);
+				sb.append(readLine+"\r\n");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -51,6 +53,23 @@ public class FileUtil {
 			StreamUtil.closeAll(br);
 		}
 		return sb.toString();
+	}
+	public static List<String> readTestFileLineList(File file) {
+		List<String> list=new ArrayList<String>();
+		BufferedReader br=null;
+		try {
+			br=new BufferedReader(new FileReader(file));
+			while(br.read()!=-1) {
+				String readLine = br.readLine();
+				list.add(readLine);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			StreamUtil.closeAll(br);
+		}
+		return list;
 	}
 	/**
 	 * 递归删除文件
@@ -68,7 +87,10 @@ public class FileUtil {
 		}
 	}
 	public static void main(String[] args) {
-		deleteFile(new File("D:\\游戏\\aaa.txt"));
-		
+		List<String> list = readTestFileLineList(new File("D:\\游戏\\aaa.txt"));
+		for (String string : list) {
+			System.out.println(string);
+		}
+		System.out.println(readTestFileLine(new File("D:\\游戏\\aaa.txt")));
 	}
 }
