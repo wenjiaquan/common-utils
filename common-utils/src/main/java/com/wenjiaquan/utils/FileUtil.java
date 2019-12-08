@@ -40,11 +40,11 @@ public class FileUtil {
 	public static String readTestFileLine(File file) {
 		StringBuffer sb=new StringBuffer();
 		BufferedReader br=null;
+		String str=null;
 		try {
 			br=new BufferedReader(new FileReader(file));
-			while(br.read()!=-1) {
-				String readLine = br.readLine();
-				sb.append(readLine+"\r\n");
+			while((str=br.readLine())!=null) {
+				sb.append(str+"\r\n");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -57,11 +57,11 @@ public class FileUtil {
 	public static List<String> readTestFileLineList(File file) {
 		List<String> list=new ArrayList<String>();
 		BufferedReader br=null;
+		String str=null;
 		try {
 			br=new BufferedReader(new FileReader(file));
-			while(br.read()!=-1) {
-				String readLine = br.readLine();
-				list.add(readLine);
+			while((str=br.readLine())!=null) {
+				list.add(str);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
