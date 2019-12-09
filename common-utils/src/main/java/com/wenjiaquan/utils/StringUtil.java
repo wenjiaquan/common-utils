@@ -41,6 +41,15 @@ public class StringUtil {
 		return str;
 	}
 	public static void main(String[] args) {
-		System.out.println(replacestr("wen"));
+		System.out.println(judgeTelephoneIsOk("28335756143"));
+	}
+	public static boolean judgeTelephoneIsOk(String src){
+		String regex="1[3578]\\d{9}";
+		String regex1="\\d+";
+		boolean matches=true;
+		if(src.matches(regex1)) {
+				matches = src.matches(regex);
+		}
+		return matches;
 	}
 }
