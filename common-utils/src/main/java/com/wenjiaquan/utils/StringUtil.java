@@ -13,13 +13,13 @@ public class StringUtil {
 	 */
 	public static boolean isBlank(String str) {
 		if(str==null) {
-			return false;
+			return true;
 		}
 		str.trim();
 		if(str.length()==0) {
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
 	/**
 	 * 判断是否是手机号
