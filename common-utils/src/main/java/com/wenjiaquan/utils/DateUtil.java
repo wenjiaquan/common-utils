@@ -16,6 +16,19 @@ import java.util.Date;
 public class DateUtil {
 	private static SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
 	private static SimpleDateFormat format1=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	
+	/**
+	 * @Title: format   
+	 * @Description: 时间格式化  
+	 * @param: @param theDate
+	 * @param: @return      
+	 * @return: String      
+	 * @throws
+	 */
+	public static String format(Date theDate) {
+		return format.format(theDate);
+	}
+	
 	public static int getAge(Date birthDate) {
 		Calendar calendar=Calendar.getInstance();
 		int nowYear = calendar.get(Calendar.YEAR);
