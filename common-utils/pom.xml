@@ -5,6 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <properties>
   	<junit-version>4.12</junit-version>
+  	<servlet-api.version>2.5</servlet-api.version>
+  	<servlet-api.version>2.5</servlet-api.version>
   </properties>
   <dependencies>
   		<!-- 单元测试 -->
@@ -13,6 +15,18 @@
 			<artifactId>junit</artifactId>
 			<version>${junit-version}</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet-api.version}</version>
+			<scope>provided</scope>
 		</dependency>
   </dependencies>
   <build>
