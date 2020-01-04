@@ -26,6 +26,15 @@ public class StringUtil {
 	 * @param str
 	 * @return
 	 */
+	public static boolean isNum(String str) {
+		String regex="\\d+";
+		return str.matches(regex);
+	}
+	/**
+	 * 判断是否是手机号
+	 * @param str
+	 * @return
+	 */
 	public static boolean isPhoneNum(String str) {
 		String regex="1[3578]\\d{9}";
 		return str.matches(regex);
@@ -41,7 +50,7 @@ public class StringUtil {
 		return str;
 	}
 	public static void main(String[] args) {
-		System.out.println(judgeTelephoneIsOk("28335756143"));
+		System.out.println(isNum("123"));
 	}
 	public static boolean judgeTelephoneIsOk(String src){
 		String regex="1[3578]\\d{9}";
