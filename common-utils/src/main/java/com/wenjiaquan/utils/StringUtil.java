@@ -27,7 +27,7 @@ public class StringUtil {
 	 * @return
 	 */
 	public static boolean isNum(String str) {
-		String regex="\\d+";
+		String regex="\\d+||\\d+.\\d+";
 		return str.matches(regex);
 	}
 	/**
@@ -50,7 +50,7 @@ public class StringUtil {
 		return str;
 	}
 	public static void main(String[] args) {
-		System.out.println(isNum("123"));
+		System.out.println(isNum("123.23"));
 	}
 	public static boolean judgeTelephoneIsOk(String src){
 		String regex="1[3578]\\d{9}";
