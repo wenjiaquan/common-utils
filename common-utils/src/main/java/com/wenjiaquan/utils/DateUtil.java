@@ -177,6 +177,6 @@ public class DateUtil {
 				
 			}
 	public static void main(String[] args) throws ParseException {
-		System.out.println(randomDate("2019-01-01", "2020-01-11").toLocaleString());
+		System.out.println(dateTimeFormat.format(randomDate("2019-01-01", "2020-01-11")));
 	}
 }
