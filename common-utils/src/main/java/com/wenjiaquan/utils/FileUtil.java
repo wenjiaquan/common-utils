@@ -86,6 +86,27 @@ public class FileUtil {
 			file.delete();
 		}
 	}
+	/**
+	 * @Title: getFileSize   
+	 * @Description: 获得文件大小
+	 * 返回文件以指定单位大小表示
+	 * File a.txt=2k  
+	 * @param: @param file
+	 * @param: @return      
+	 * @return: String      
+	 * @throws
+	 */
+	public static String getFileSize(File file) {
+		long length = file.length();
+		double len = length/1024.0;
+//		return Math.round((length/1024.0))+"kb";
+		return String.format("%.2f",len)+"kb";
+	}
+	
+	public static String getFileSize(String fileFullName) {
+		return getFileSize(new File(fileFullName));
+	}
+	
 	public static void main(String[] args) {
 		List<String> list = readTestFileLineList(new File("D:\\游戏\\aaa.txt"));
 		for (String string : list) {
