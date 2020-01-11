@@ -142,7 +142,7 @@ public class DateUtil {
 		return -1;
 	}
 	//生成指定范围内随机日期.如 2010年1月1日至今任意随机时间
-			public static Date randomDate(Date d1,Date d2) {
+			public static String randomDate(Date d1,Date d2) {
 				
 				//开始的毫秒数
 				long l1 = d1.getTime();
@@ -153,7 +153,7 @@ public class DateUtil {
 				
 				long l3= (long) ((Math.random() * (l2-l1 +1)) +l1);
 				
-				return new Date(l3);
+				return dateTimeFormat.format(new Date(l3));
 				
 			}
 			/**
@@ -162,7 +162,7 @@ public class DateUtil {
 			 * @param endDate "yyyy-MM-dd"
 			 * @return
 			 */
-			public static Date randomDate(String stratDate,String endDate) {
+			public static String randomDate(String stratDate,String endDate) {
 				SimpleDateFormat st = new SimpleDateFormat("yyyy-MM-dd");
 				long date = 0L;
 				try {
@@ -173,10 +173,10 @@ public class DateUtil {
 				} catch (ParseException e) {
 					e.printStackTrace();
 				}
-				return new Date(date);
+				return dateTimeFormat.format(new Date(date));
 				
 			}
 	public static void main(String[] args) throws ParseException {
-		System.out.println(dateTimeFormat.format(randomDate("2019-01-01", "2020-01-11")));
+		System.out.println(randomDate("2019-01-01", "2020-01-11"));
 	}
 }
