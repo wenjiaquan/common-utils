@@ -1,12 +1,15 @@
 package com.wenjiaquan.utils;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -167,5 +170,19 @@ public class FileUtil {
 			System.out.println(string);
 		}
 		System.out.println(readTestFileLine(new File("D:\\游戏\\aaa.txt")));
+	}
+	/***
+	 * @Title: writeFile * @Description: 按照指定的编码把内容写入指定的文件中 * @param path * @param
+	 *         content * @param charset * @throws IOException * @return: void
+	 */
+	public static void writeFile(String path, String content, String charset) throws IOException {
+		// 创建写入的文件
+		File file = new File(path);
+		// 创建输出流对象
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), charset));
+		bw.write(content);
+		bw.flush();
+		bw.close();
+
 	}
 }
