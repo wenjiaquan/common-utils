@@ -7,8 +7,14 @@
   	<junit-version>4.12</junit-version>
   	<servlet-api.version>2.5</servlet-api.version>
   	<servlet-api.version>2.5</servlet-api.version>
+  	<pagehelper-version>5.1.2</pagehelper-version>
   </properties>
   <dependencies>
+  		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>${pagehelper-version}</version>
+		</dependency>
   		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
