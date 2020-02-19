@@ -84,4 +84,12 @@ public class StringUtil {
                 + "(/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+/?)$";  
         return  str.matches(regex);	
 	}
+	
+	public static boolean ksisHttpUrl(String src){
+		//TODO 实现判断传入的字符串是否为以http打头的url地址
+		if(src.startsWith("http:") || src.startsWith("https:")) {
+			return true;
+		}
+		return false;
+	}
 }
