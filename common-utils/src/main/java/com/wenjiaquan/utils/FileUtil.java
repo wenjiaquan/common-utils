@@ -200,7 +200,7 @@ public class FileUtil {
 	 * @throws IllegalStateException
 	 * @throws IOException
 	 */
-	public String processFile(MultipartFile file) throws IllegalStateException, IOException {
+	public static String processFile(MultipartFile file) throws IllegalStateException, IOException {
 
 		// 原来的文件名称
 		System.out.println("file.isEmpty() :" + file.isEmpty()  );
@@ -230,7 +230,7 @@ public class FileUtil {
 	 * @param file下载
 	 * @throws FileNotFoundException 
 	 */
-	public void downLoad(HttpServletResponse response, String filename) throws FileNotFoundException {
+	public static void downLoad(HttpServletResponse response, String filename) throws FileNotFoundException {
 		 /* // 下载本地文件
 	    String fileName = "Operator.doc".toString(); // 文件的默认保存名
 */	    // 读到流中
