@@ -4,7 +4,7 @@
   <artifactId>common-utils</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <properties>
-  	<junit-version>4.12</junit-version>
+  	<junit-version>4.13.1</junit-version>
   	<servlet-api.version>2.5</servlet-api.version>
   	<servlet-api.version>2.5</servlet-api.version>
   	<pagehelper-version>5.1.2</pagehelper-version>
@@ -25,7 +25,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>4.13.1</version>
 		</dependency>
   		<!-- 单元测试 -->
 		<dependency>
